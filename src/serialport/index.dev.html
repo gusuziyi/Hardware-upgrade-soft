@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>sp</title>
+
+    <style type="text/css">
+      .test {
+        margin: 20px;
+      }
+      .test > p {
+        margin-bottom: 4px;
+        font-size: 12px;
+      }
+      button {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> test serial port </h1>
+    <p>说明：串口扫描存在超时，可主动停止。当扫描到串口后，也会自动停止。<br/>
+      扫描到串口后需要激活才能使用，就是连接串口。连接后默认是命令模式，你可以发送命令。<br/>
+      测试文件传输时，会切换到文件传输模式。各模式是互斥的，传输文件时，你无法发送命令
+    </p>
+    <div class='test'>
+      <p>串口控制</p>
+      <button id='scan'>扫描串口</button>
+      <button id='stop-scan'>停止扫描串口</button>
+      <button id='active-port'>激活串口</button>
+      <button id='close'>关闭串口</button>
+    </div>
+    <div class='test'>
+      <p>命令模式测试</p>
+      <button id='get-profile'>get profile</button>
+      <button id='module-view'>在线模块</button>
+    </br>
+      <button id='module-arm-joint'>摇摆关节球</button>
+      <input type="text" id='set-arm-joint'>
+    </br>
+      <button id='module-waist-joint'>水平关节球</button>
+      <input type="text" id='set-waist-joint'>
+      <button id='module-waist-joint-batch'>查询所有水平关节球</button>
+      <button id='module-arm-joint-batch'>查询所有摇摆关节球</button>
+    </br>
+      <button id='module-driver'>驱动轮</button>
+      <input type="text" id='set-driver-test'>
+      <button id='module-driver-position-batch'>所有驱动轮位置</button>
+    </br>
+      <button id='module-driver-polar'>驱动轮极性</button>
+      <input type="text" id='set-driver-polar'>
+    </br>
+      <button id='module-driver-color' disabled=true>驱动轮灯光模式</button>
+      <input type="text" id='set-driver-color1'>
+      <input type="text" id='set-driver-color2'>
+    </br>
+      <button id='module-touch'>触碰球是否按下</button>
+    </br>
+      <button id='motor-polarity'>查询电机极性</button>
+    </br>
+      <button id='module-battery-Batch'>查询所有电池电量</button>
+    </br>
+    </div>
+    <div class='test'>
+      <p>命令模式响应测试</p>
+      <button id='register-listener'>注册监听</button>
+      <button id='unregister-listener'>取消注册监听</button>
+      <button id='poll-module-view'>轮询在线模块</button>
+      <button id='unpoll-module-view'>取消轮询在线模块</button>
+    </div>
+    <div class='test'>
+      <p>文件传输模式测试</p>
+      <button id='file-transfer'>文件传输</button>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>

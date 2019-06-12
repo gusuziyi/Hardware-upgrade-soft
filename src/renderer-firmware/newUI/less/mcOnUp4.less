@@ -1,0 +1,66 @@
+@import "./bass.less";
+
+.warper {
+  height: 550px;
+  width: 1000px;
+  color: white;
+  align-items: center;
+  font-family: smfont;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .uTitle {
+    color: @TitleColor;
+    font-size: 16px;
+    padding-top: @titleMatop;
+
+  }
+
+  .pic {
+    margin-top: 50px;
+  }
+
+  .uWarning{
+    margin-top: 60px;
+    max-width: 800px;
+    .uWarning();
+  }
+
+  .uVer {
+    .uVer()
+  }
+
+  .hAlert {
+    .hAlert();
+    height: 230px;
+    width: 500px;
+    position: absolute;
+    top: 120px;
+
+    .hHeader {
+      .hHeader();
+    }
+
+    .hTitle {
+      margin-top: 42px;
+      font-size: 20px;
+      color: rgb(11, 11, 12);
+      text-align: center;
+    }
+    .uButton {
+      .hButton();
+      font-size:16px ;
+    }
+    .hTip{
+      margin-top: 50px;
+      color: @tipColor;
+      font-family: srfont;
+    }
+
+  }
+
+
+}

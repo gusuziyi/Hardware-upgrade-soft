@@ -1,0 +1,77 @@
+@import "./bass.less";
+
+.warpper{
+  height: 50px;
+  background-color: @pColor;
+  color: white;
+
+  line-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  font-family: srfont;
+  .title{
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  .list{
+    display: flex;
+    align-items: center;
+    img{
+      margin: auto 5px;
+      cursor: pointer;
+    }
+    .ul{
+      font-size: 14px;
+      margin-right: 20px;
+      padding-left: 0px;
+      position: relative;
+      color: white;
+      list-style: none;
+      li{
+        display: inline-block;
+        margin: auto 5px;
+		  	cursor: pointer;
+
+      }
+			.divide{
+			  color: #777;
+				cursor: none;
+			}
+  }
+  }
+	 .hcAlert{
+		 z-index: 99;
+	  .hAlert();
+	  height: 230px;
+	  width: 500px;
+	  position: absolute;
+		 top: 150px;
+		 margin-left: 250px;
+	  display: flex;
+	  flex-direction: column;
+	
+	  .hcHeader {
+	    .hHeader();
+	  }
+	  .hcClose{
+	    cursor: pointer;
+	  }
+	
+	  .hcTitle {
+	    margin-top: 42px;
+	    font-size: 20px;
+	    color: rgb(11, 11, 12);
+	    text-align: center;
+	    font-family: srfont;
+	  }
+	  .ucButton {
+	    .hButton();
+	    font-size:16px;
+	    align-self: center;
+	  }
+	  .hcTip{
+	    margin-top: 50px;
+	    .hTip();
+	  }
+	}
+}

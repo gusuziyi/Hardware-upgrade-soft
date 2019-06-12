@@ -1,0 +1,187 @@
+@import "./bass.less";
+@keyframes stars {
+  0%{
+    opacity: .5;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: .5;
+  }
+  75%{
+    opacity: 0;
+  }
+  100%{
+    opacity: .5;
+  }
+}
+.warper {
+  height: 550px;
+  width: 1000px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: srfont;
+  position: relative;
+
+  .pic {
+    margin-top: 104px;
+  }
+
+  .uTip {
+    color: rgb(61, 64, 75);
+    font-size: 20px;
+    margin-top: 80px;
+  }
+
+  .uLink {
+    margin-top: 24px;
+    .uLink();
+  }
+
+  .uVer {
+    .uVer()
+  }
+
+  .hmAlert{
+    .hAlert();
+    height: 400px;
+    width: 640px;
+    position: absolute;
+    top: 50px;
+
+    .hHeader{
+      background-color: @pColor;
+      height: 36px;
+      line-height: 36px;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 15px 0 15px;
+      .hClose{
+        cursor: pointer;
+      }
+    }
+    .hTitle{
+      margin-top: 42px;
+      font-size: 20px;
+      color: rgb(11,11,12);
+      text-align: center;
+    }
+    .hUl{
+      margin-top: 40px;
+      font-size: 14px;
+      color: rgb(48,51,57);
+      list-style: none;
+      padding: 0 30px 0 30px;
+      margin-left: 10px;
+      li{
+        padding: 7px;
+      }
+      .hLink{
+        color:@pColor;
+        padding-bottom:5px;
+        border-bottom:1px solid @pColor;
+        cursor: pointer;
+      }
+    }
+  }
+  .hcAlert{
+    .hAlert();
+    height: 230px;
+    width: 500px;
+    position: absolute;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+
+    .hcHeader {
+      .hHeader();
+    }
+    .hcClose{
+      cursor: pointer;
+    }
+
+    .hcTitle {
+      margin-top: 42px;
+      font-size: 20px;
+      color: rgb(11, 11, 12);
+      text-align: center;
+      font-family: srfont;
+    }
+    .ucButton {
+      .hButton();
+      font-size:16px;
+      align-self: center;
+    }
+    .hcTip{
+      margin-top: 50px;
+      .hTip();
+    }
+  }
+
+  .hrAlert{
+    .hAlert();
+    height: 360px;
+    width: 436px;
+    position: absolute;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+
+    .hcHeader {
+      .hHeader();
+    }
+    .hcClose{
+      cursor: pointer;
+    }
+    .redball{
+      align-self: center;
+      width: 136px;
+      height: 136px;
+      margin-top: 40px;
+    }
+    .redballup{
+      .redball();
+      position: absolute;
+      top: 36px;
+      height: 110px;
+      animation: stars 2s infinite;
+    }
+    .uTip{
+      align-self: center;
+      margin-top: 30px;
+      font-family: srfont;
+      font-size: 14px;
+      color: rgb(48,51,57);
+    }
+    .uTip-dc{
+      padding: 0 20px 0 20px;
+      margin-bottom: -5px;
+
+
+    }
+    .btnGrp{
+      margin-top: -10px;
+      align-self: center;
+      display: flex;
+      justify-content: space-between;
+      width: 316px;
+      .hcYes{
+        .hButton();
+        width: 100px;
+      }
+      .hcNo{
+        .hButton();
+        width: 100px;
+        background-color:rgb(200,206,216);
+      }
+
+    }
+
+  }
+	.install{
+		height: 180px;
+	}
+}

@@ -1,0 +1,119 @@
+@font-face {
+  font-family: smfont;
+  src: url("../font/NotoSansHans-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: srfont;
+  src: url("../font/NotoSansHans-Regular.otf") format("opentype");
+}
+//主题颜色
+@pColor:rgb(35,110,231);   //#236ee7
+//标题颜色
+@TitleColor:rgb(29, 30, 34);
+@titleMatop:30px;
+
+@tipColor:rgb(61,64,75);
+.uButton{
+  width: 200px;
+  height: 40px;
+  background-color: @pColor;
+  color: white;
+  line-height: 40px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-family: smfont;
+  text-align: center;
+  font-size: 16px;
+}
+.uTip {
+  color: @tipColor;
+  font-size: 20px;
+  font-family: srfont;
+
+}
+.uVer {
+  font-size: 16px;
+  color: rgb(29, 30, 34);
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-family: smfont;
+}
+.uLink {
+  color: rgb(35, 110, 231);
+  font-size: 16px;
+  font-family: smfont;
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgb(35, 110, 231);
+}
+
+.uWarning{
+  font-family: srfont;
+  color: rgb(255,70,20);
+  font-size: 14px;
+}
+
+.back{
+  border-width: 0 0 2px 2px;
+  border-color: grey;
+  border-style: solid;
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  transform:rotate(45deg);
+  position: absolute;
+  top: @titleMatop;
+  left: 20px;
+  cursor: pointer;
+}
+
+
+.hAlert {
+  background-color: #fff;
+  box-shadow: 0 0 2px #aaa;
+  font-family: srfont;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hHeader{
+  background-color: @pColor;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 0 15px;
+  height: 36px;
+  line-height: 36px;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+
+}
+.hClose{
+  cursor: pointer;
+}
+.hTip{
+  color: @tipColor;
+  text-align: center;
+  font-family: srfont;
+  font-size: 18px;
+}
+.hButton{
+  width: 100px;
+  height: 40px;
+  background-color: @pColor;
+  color: white;
+  line-height: 40px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-family: smfont;
+  text-align: center;
+  font-size: 16px;
+}
+
