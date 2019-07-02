@@ -1,27 +1,32 @@
 {
-  "name": "Mabot-Firmware-Upgrader-Pro",
+  "name": "Mabot-Modules-Upgrader",
   "version": "1.0.0",
-  "description": "Mabot Firmware Upgrader Pro for MC and modules to upgrade the firmwares.",
+  "description": "Mabot Firmware Upgrader for MC and modules to upgrade the firmwares.",
   "main": "app/renderer-firmware/main.js",
   "author": "bell.ai Mobile Team",
   "scripts": {
+    "start:sp": "cross-env electron ./src/serialport/main.dev.js",
+    "package": "electron-packager . --out=dist --overwrite --icon=./src/renderer-firmware/assets/images/ico.ico",
     "rebuild": "electron-rebuild -f -w sqlite3 serialport",
     "start:firmware": "cross-env NODE_ENV=development concurrently \"webpack-dev-server --mode development --config ./src/renderer-firmware/webpack.config.js\" \"electron --inspect=5858 ./src/renderer-firmware/main.js\" ",
     "build:firmware": "cross-env NODE_ENV=production webpack --mode production --config ./src/renderer-firmware/webpack.config.js && cross-env NODE_ENV=production electron --inspect=5858 ./app/renderer-firmware/main.js",
     "pack:firmware_win": "node_modules/.bin/build --ia32 --win",
     "pack:firmware_mac": "node_modules/.bin/build --mac --x64 "
   },
-
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "keywords": [
     "bell",
-    "Upgrade",
+    "IDE",
     "pc"
   ],
   "build": {
     "publish": [
       {
         "provider": "generic",
-        "url": "https://ubao.bellrobot.com/download/apps/MabotFirmwareUpgraderPro/windows/"
+        "url": "https://www.bellrobot.com/cn/download.html"
       }
     ],
     "appId": "ai.bell.mabotfirmwareupgraderpro",
@@ -29,6 +34,7 @@
       "category": "your.app.category.type",
       "target": [
         "zip",
+
         "dmg"
       ],
       "icon": "./src/renderer-firmware/assets/images/icon.icns"
@@ -107,7 +113,7 @@
     "classnames": "^2.2.6",
     "electron-updater": "^3.0.3",
     "node-abi": "^2.4.4",
-    "serialport": "^4.0.7",
+    "serialport": "^7.1.5",
     "sqlite3": "^4.0.2"
   }
 }
