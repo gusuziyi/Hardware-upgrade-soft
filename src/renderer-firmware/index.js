@@ -1,14 +1,7 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import './assets/css/global.css';
-import spritesCss from './assets/css/sprite-0.css';
-// import Home from './views/components/Home.jsx';
-import Header from './views/containers/Header.jsx'
-import Body from './views/containers/Body.jsx'
-import Footer from './views/containers/Footer.jsx'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
 
-
-require('./native.js');
+require('./native.js')
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -17,10 +10,10 @@ const store = createStore(reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 setTimeout(
-  function(){
+  function () {
     render(
-      <Provider store={ store }>
-        <div className={ spritesCss['icon-bg1'] }>
+      <Provider store={store}>
+        <div className={spritesCss['icon-bg1']}>
           <Header />
           <Body />
           <Footer />
@@ -28,5 +21,5 @@ setTimeout(
       </Provider>,
       document.getElementById('app')
     )
-  },1000
+  }, 1000
 )

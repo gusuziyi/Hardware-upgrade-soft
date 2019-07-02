@@ -138,18 +138,22 @@ class SPManager {
     // 没有finishFlag，扫描很慢，不可能多次回调。而且多次回调也没关系，本来就是无限回调
     this.scanCB = callback
     // 开始轮询
+    console.log('### scanInfinite',this.scanTask,SerialPort)
     this.scanTask = setInterval(function() {
       log.debug('scanning...')
+
       SerialPort.list(function(err, ports) {
         // 错误回调
         if (err) {
           if (_this.scanCB) {
             _this.scanCB(err, null)
+            console.log('### scanInfinite  err',err)
           }
           return
         }
         // 查询串口
         for (var i = 0; i < ports.length; i++) {
+          console.log('scanning...',ports)
           var port = ports[i]
           // 就是这个串口
           let validPort = false
@@ -164,16 +168,19 @@ class SPManager {
             const found = scannedSP.findIndex((e) => {
               return e.comName === port.comName
             })
+            console.log('port---found',port,found)
             if (found === -1) {
               scannedSP.push(port)
+
               if (_this.scanCB) {
                 _this.scanCB(null, port)
+                _this.stopScan()
               }
             }
           }
         }
       })
-    }, 200)
+    }, 500)
   }
 
   /** 停止扫描
@@ -186,6 +193,7 @@ class SPManager {
     if (this.scanTask) {
       clearInterval(this.scanTask)
       this.scanTask = null
+      console.log('###### stop scan')
     }
     this.scanOpt = null
     this.scanCB = null

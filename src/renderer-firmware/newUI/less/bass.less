@@ -29,16 +29,41 @@
   color: @tipColor;
   font-size: 20px;
   font-family: srfont;
+  padding: 0 20px;
 
 }
+.uVerText{
+  font-size: 14px;
+  color: rgb(29, 30, 34);
+  position: absolute;
+  right: 70px;
+  bottom: 20px;
+  font-family: srfont;
+}
 .uVer {
-  font-size: 16px;
+  font-size: 14px;
   color: rgb(29, 30, 34);
   position: absolute;
   right: 20px;
   bottom: 20px;
-  font-family: smfont;
+  font-family: srfont;
+
 }
+.uTable{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  .uTr{
+    font-family: srfont;
+    font-size: 14px;
+    color: rgb(29, 30, 34);
+    text-align: left;
+    .uTd{
+      text-align: right;
+    }
+  }
+}
+
 .uLink {
   color: rgb(35, 110, 231);
   font-size: 16px;
@@ -67,6 +92,7 @@
   top: @titleMatop;
   left: 20px;
   cursor: pointer;
+  padding: 5px;
 }
 
 

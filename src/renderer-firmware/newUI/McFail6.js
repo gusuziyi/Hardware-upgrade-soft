@@ -23,7 +23,7 @@ class McFail6 extends Component {
                 </div>
 
                 <div
-                    className={s6['uVer']}>{/* 当前主控版本：*/}{messages['curr_mc']}{showcurrentMcVersion},{currentMcVersion==maxMcVersion?messages['is_later']:messages['not_later']}</div>
+                    className={s6['uVer']}>{/* 当前主控版本：*/}{messages['curr_mc']}{showcurrentMcVersion}{currentMcVersion==maxMcVersion?messages['is_later']:messages['not_later']}</div>
                 <span className={s6['uButton']} onClick={() => {
                     this.props.ifMcUp(true)
                 }}>{messages['up']}

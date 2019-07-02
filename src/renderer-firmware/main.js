@@ -36,7 +36,6 @@ function createWindow() {
     } else {
         mainWindow.loadURL('http://localhost:9999/newRepair.html')
     }
-    // createMenu()
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()
 
@@ -83,114 +82,10 @@ const installDrive=(e,arg) => {
     }
 }
 
-// let t=require('./utils/mainLang')
-// let langPath=path.resolve(__dirname, t)
-// const strings= require(langPath)
-// 
-// let currLang=strings.ch   //current language ,default is ch
-/* function createMenu() {
-    let template = [{
-        label: 'Mabot',
-        // role: 'window',
-        submenu: [{
-            label: ' 开发模式',
-            accelerator: (() => {
-                if (process.platform === 'darwin') {
-                    return 'Alt+Command+I'
-                } else {
-                    return 'Ctrl+Shift+I'
-                }
-            })(),
-            click: (item, focusedWindow) => {
-                if (focusedWindow) {
-                    focusedWindow.toggleDevTools()
-                }
-            }
-        },{
-            label: '最小化',
-            accelerator: 'CmdOrCtrl+M',
-            role: 'minimize'
-        }, {
-            label: '刷新',
-            accelerator: 'CmdOrCtrl+R',
-            click: (item, focusedWindow) => {
-                if (focusedWindow) {
-                    // on reload, start fresh and close any old
-                    // open secondary windows
-                    if (focusedWindow.id === 1) {
-                        BrowserWindow.getAllWindows().forEach(win => {
-                            if (win.id > 1) win.close()
-                        })
-                    }
-                    focusedWindow.reload()
-                }
-            }
-        },{
-            label: '关闭',
-            accelerator: 'CmdOrCtrl+W',
-            role: 'close'
-        }]
-    }, {
-        label: currLang.lang,
-        submenu: [{
-            label: currLang.chinese,
-            accelerator: 'CmdOrCtrl+1',
-            click:()=>{
-                mainWindow.webContents.send('ChangeCh');
-                currLang=strings.ch
-                createMenu()
-            }
-        }, {
-            label: currLang.english,
-            accelerator: 'CmdOrCtrl+2',
-            click:()=>{
-                mainWindow.webContents.send('ChangeEn');
-                currLang=strings.en
-                createMenu()
-            }
-        }]
-    }, {
-        label: currLang.help,
-        submenu: [{
-            label: currLang.install,
-            accelerator: 'CmdOrCtrl+3',
-            click: (item, focusedWindow) => {
-                let driverPath;
-                if (process.platform === 'win32') {
-                    driverPath = './assets/driver/CH34x_Install_Windows_v3_4.EXE'
-                } else if (process.platform === 'darwin') {
-                    driverPath = './assets/driver/CH34x_Install_V1.4.pkg'
-                } else {
-                    dialog.showErrorBox("Error", 'unsupported platform')
-                }
-                installDrive(null,driverPath)
-            }
-        }, {
-            label: currLang.customer,
-            accelerator: 'CmdOrCtrl+4',
-            click: (item, focusedWindow) => {
-                const options = {
-                    type: 'info',
-                    title: '客服联系方式',
-                    buttons: ['Ok'],
-                    message: '电话：11111\n dizhi:22222'
-                }
-                dialog.showMessageBox(focusedWindow, options, function () { })
-            }
-        }]
-    }]
-
-    const menu = Menu.buildFromTemplate(template)
-    Menu.setApplicationMenu(menu)
-}
-
-
- */
-
 ipcMain.on('closed', () => {
     app.quit();
 });
-//小化
+//最小化
 ipcMain.on('hide-window', () => {
     mainWindow.minimize();
 });
@@ -199,7 +94,6 @@ ipcMain.on('hide-window', () => {
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
     createWindow()
-    // createMenu()
 })
 
 // Quit when all windows are closed.

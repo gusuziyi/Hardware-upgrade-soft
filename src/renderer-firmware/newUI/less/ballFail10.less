@@ -4,14 +4,8 @@
   0% {
     top: -24px;
   }
-  45% {
-    top: -55px;
-  }
-  55% {
-    top: -55px;
-  }
   100% {
-    top: -24px;
+    top: -55px;
   }
 
 }
@@ -55,7 +49,8 @@
     .arm {
       left: -6px;
       top: -24px;
-      animation: move 5s infinite;
+      animation: move 3s ease 4s 1;
+      animation-fill-mode: forwards;
     }
 
   }
@@ -68,6 +63,13 @@
   .uWarning {
     .uWarning();
     margin-top: 40px;
+    font-size: 16px;
+  }
+  .uWarn{
+    font-family: srfont;
+    color: rgb(255,70,20);
+    margin-top: 10px;
+    font-size: 16px;
   }
 
   .uButton {
@@ -77,9 +79,12 @@
 
   .uVer {
     .uVer();
-    font-size: 15px;
     bottom: 20px;
     text-align: right;
+  }
+  .uTable {
+    .uTable();
+
   }
 
 
@@ -110,6 +115,7 @@
       margin-top: 40px;
       color: @tipColor;
       font-family: srfont;
+      padding: 0 20px;
     }
 
   }
@@ -150,6 +156,7 @@
     .hcTip {
       margin-top: 50px;
       .hTip();
+
     }
 
     .hContcat {
@@ -180,6 +187,7 @@
       .uWarning();
       margin-top: 50px;
     }
+
 
     .btnGrp {
       margin-top: 10px;

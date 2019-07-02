@@ -8,7 +8,6 @@ class  McUp3 extends  Component{
             showAlert:false,
         }
     }
-
     upgrade=()=>{
         //TO is latest version
         const {ifMcUp,currentMcVersion,maxMcVersion}=this.props
@@ -34,7 +33,7 @@ class  McUp3 extends  Component{
         let showcurrentMcVersion=toHex(messages,currentMcVersion)
 
         const ShowMCVersion=()=> <div className={s3['uVer']}>
-           {/* 当前主控版本：*/}{messages['curr_mc']}{showcurrentMcVersion},{currentMcVersion==maxMcVersion?messages['is_later']:messages['not_later']}</div>
+           {/* 当前主控版本：*/}{messages['curr_mc']}{showcurrentMcVersion}{currentMcVersion==maxMcVersion?messages['is_later']:messages['not_later']}</div>
         let startPic=require('./src/start.png')
         return (
             <div className={s3['warper']}>

@@ -12,7 +12,6 @@ class  McOnUp4 extends  Component{
             currentMcVersion:-1, //for rewrite the new version ,so there let a state for catch
             maxMcVersion:-1,  //for rewrite the new version ,so there let a state for catch
             showMayBeFail:false
-
         }
     }
     upgrade=(maxMcVersion)=>{
@@ -69,6 +68,9 @@ class  McOnUp4 extends  Component{
         }
 
 
+
+
+
     }
     semulateUpdate=()=>{
         const {maxMcVersion}=this.props
@@ -119,7 +121,7 @@ class  McOnUp4 extends  Component{
                     <p>{/*上述操作会导致主模块无法使用。*/}{messages['l4_not_work']} </p>
                 </div>
                 <Progress  percentageNum={progress} progressName='安装进度' />
-                <div className={s4['uVer']}> {/* 当前主控版本：*/}{messages['curr_mc']}{showcurrentMcVersion},{currentMcVersion==maxMcVersion?messages['is_later']:messages['not_later']}</div>
+                <div className={s4['uVer']}> {/* 当前主控版本：*/}{messages['curr_mc']}{showcurrentMcVersion}{currentMcVersion==maxMcVersion?messages['is_later']:messages['not_later']}</div>
                 {fail?<div className={s4['hAlert']}>
                     <div  className={s4['hHeader']}>
                        {/*提示*/} {messages['tips']}

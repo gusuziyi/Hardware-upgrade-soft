@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const NodeExternalsPlugin = require('webpack-node-externals');
 
 process.env.DEBUG = process.env.DEBUG || true
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
@@ -24,7 +25,7 @@ module.exports = {
   devtool: JSON.parse(process.env.DEBUG) ? 'cheap-module-source-map' : 'none',
 
   entry: {
-    // index: path.resolve(__dirname, 'index.js'),
+    index: path.resolve(__dirname, 'index.js'),
     newRepair: path.resolve(__dirname, 'newRepair.js')
 
   },
@@ -148,6 +149,7 @@ module.exports = {
       title: 'Mabot固件升级工具',
       filename: 'index.html'
     }),
+
 
     new HtmlWebpackPlugin({
       chunks: ['newRepair'],
