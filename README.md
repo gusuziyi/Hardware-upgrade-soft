@@ -3,7 +3,7 @@
 * git clone '项目地址' && npm install
 * 串口连接程序是C++模块，使用之前需要编译，electron-rebuild包正是为这个目的存在的
 * 基本编译环境：node 8.0+、pyton2.7、C++、electron-rebuild 1.5 electron 1.5 serialport 4.0.7
-* 串口通信协议为sr232,crc校验为crc16/modbus规则,可以根据硬件指令直接对硬件进行测试,[modbus规则生成器](https://www*23bei.com/tool-232.html)
+* 串口通信协议为sr232,crc校验为crc16/modbus规则,可以根据硬件指令直接对硬件进行测试,[modbus规则生成器](https://www.23bei.com/tool-232.html)
 * 项目指令
     - npm install 安装所需依赖(安装前要保证基本编译环境配置正确)
 	- npm run rebuild  编译串口文件
